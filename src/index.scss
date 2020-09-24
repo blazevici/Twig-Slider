@@ -1,1 +1,37 @@
 @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css");
+
+$accent: #295f92;
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+
+    .container {
+
+        .header {
+            padding-top: 10rem;
+            background-color: $accent;
+            border-radius: 0 0 5px 5px;
+        }
+
+        .footer {
+            padding-top: 10rem;
+            background-color: $accent;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .content-container {
+            margin: 0;
+            padding: 3rem 0;
+
+            .text-container {
+                h1 {
+                    color: $accent;
+                    font-size: 2rem;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
