@@ -1,0 +1,19 @@
+{
+  "name": "twig-slider",
+  "version": "1.0.0",
+  "description": "Simple slider made with Twig template engine",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blazevici/Twig-Slider.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blazevici/Twig-Slider/issues"
+  },
+  "homepage": "https://github.com/blazevici/Twig-Slider#readme"
+}
