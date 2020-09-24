@@ -2,7 +2,7 @@
   "name": "twig-slider",
   "version": "1.0.0",
   "description": "Simple slider made with Twig template engine",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,14 @@
   "bugs": {
     "url": "https://github.com/blazevici/Twig-Slider/issues"
   },
-  "homepage": "https://github.com/blazevici/Twig-Slider#readme"
+  "homepage": "https://github.com/blazevici/Twig-Slider#readme",
+  "devDependencies": {
+    "css-loader": "^4.3.0",
+    "file-loader": "^6.1.0",
+    "sass": "^1.26.11",
+    "sass-loader": "^10.0.2",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  }
 }

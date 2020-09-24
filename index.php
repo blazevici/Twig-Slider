@@ -2,9 +2,7 @@
 
 require 'vendor/autoload.php';
 
-$loader = new \Twig\Loader\FilesystemLoader('./views');
+$loader = new \Twig\Loader\FilesystemLoader('./src/views');
 $twig = new \Twig\Environment($loader);
 
-echo $twig->render("index.html.twig", array(
-    'name' => 'Ivan'
-));
+echo $twig->render("index.html.twig");
