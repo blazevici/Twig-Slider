@@ -9,7 +9,6 @@ $(document).ready( () => {
         let lowerCarousel = $("#images-lower");
         let upperItems = $("#images-upper").find(".image-item");
         let lowerItems = $("#images-lower").find(".image-item");
-
         let elUpper = $(".ref-upper").removeClass("ref-upper");
         let elLower = $(".ref-lower").removeClass("ref-lower");
 
@@ -18,6 +17,12 @@ $(document).ready( () => {
 
         nextImageUpper.addClass('ref-upper').css('order', 1);
         nextImageLower.addClass('ref-lower').css('order', 1);
+
+        document.documentElement.style.setProperty("--upperTranslate", nextImageUpper.innerWidth() + "px");
+        document.documentElement.style.setProperty("--lowerTranslate", nextImageLower.innerWidth() + "px");
+
+        // console.log(document.documentElement.style.getPropertyValue("--upperTranslate"));
+        // console.log(document.documentElement.style.getPropertyValue("--lowerTranslate"));
 
         carouselMove(upperCarousel, nextImageUpper, upperItems);
         carouselMove(lowerCarousel, nextImageLower, lowerItems);
@@ -44,11 +49,11 @@ $(document).ready( () => {
         let nextItem;
 
         if (currentArrow.data('toggle') == 'next') {
-            nextItem = next(currentElement, items);
-            carousel.removeClass('transition-reverse');
-        } else {
             nextItem = previous(currentElement, items);
             carousel.addClass('transition-reverse');
+        } else {
+            nextItem = next(currentElement, items);
+            carousel.removeClass('transition-reverse');
         }
 
         return nextItem;
@@ -62,7 +67,7 @@ $(document).ready( () => {
         carousel.removeClass('transition');
         setTimeout(() => {
             carousel.addClass('transition');
-        }, 25);
+        }, 5);
     }
 
 });
