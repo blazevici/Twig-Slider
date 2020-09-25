@@ -4,7 +4,8 @@
   "description": "Simple slider made with Twig template engine",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx webpack -w"
   },
   "repository": {
     "type": "git",

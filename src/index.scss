@@ -1,30 +1,169 @@
 @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css");
 
 $accent: #295f92;
+$gray: #dddddd;
 
-html, body {
+@mixin carousel-style {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    list-style: none;
     margin: 0;
     padding: 0;
+    position: relative;
+
+    .image-item {
+        margin-left: 0.75rem;
+
+        img {
+            object-fit: cover;
+            width: auto !important;
+            height: 200px !important;
+            border-radius: 5px;
+        }
+    }
+}
+
+@mixin arrow-style {
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+    width: 20px;
+    height: 32px;
+    margin: 0 auto;
+    padding: 1.75rem;
+    border: 1px solid $gray;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
     height: 100%;
 
     .container {
+        padding: 0;
 
         .header {
             padding-top: 10rem;
             background-color: $accent;
             border-radius: 0 0 5px 5px;
+            margin: 0;
         }
 
         .footer {
             padding-top: 10rem;
             background-color: $accent;
             border-radius: 5px 5px 0 0;
+            margin: 0;
         }
 
         .content-container {
             margin: 0;
             padding: 3rem 0;
 
+            .carousel-container {
+                padding: 0;
+                overflow: hidden;
+                direction: rtl;
+
+                .carousel-upper {
+                    display: block;
+                    margin-bottom: 0.75rem;
+    
+                    .carousel-images {
+                        @include carousel-style;
+                        transform: translateX(-180px);
+
+                        .image-item {
+                            flex: 1 0 auto;
+                            order: 2;
+                        }
+
+                        .ref-upper {
+                            order: 1;
+                        }
+                    }
+
+                    .transition-reverse {
+                        transform: translateX(180px);
+                    }
+
+                    .transition {
+                        transform: none;
+                        transition: transform 0.85s cubic-bezier(0.3, 1, 0.35, 1);
+                    }
+                }
+
+                .lower-container {
+                    margin: 0;
+
+                    .content {
+                        overflow: hidden;
+                        padding-left: 0;
+                        padding-right: 5rem;
+                    }
+
+                    .arrow-container {
+                        padding: 0;
+
+                        #left-arrow {
+                            background-image: url("../resources/arrow-gray-left.png");
+                            @include arrow-style;
+                        }
+
+                        #left-arrow:hover {
+                            border-color: $accent;
+                            cursor: pointer;
+                            background-image: url("../resources/arrow-blue-left.png");
+                        }
+
+                        #right-arrow {
+                            background-image: url("../resources/arrow-gray-right.png");
+                            @include arrow-style;
+                        }
+
+                        #right-arrow:hover {
+                            border-color: $accent;
+                            cursor: pointer;
+                            background-image: url("../resources/arrow-blue-right.png");
+                        }
+                    }
+
+                    .carousel-lower {
+                        display: block;
+    
+                        .carousel-images {
+                            @include carousel-style;
+                            transform: translateX(-180px);
+
+                            .image-item {
+                                flex: 1 0 auto;
+                                order: 2;
+                            }
+    
+                            .ref-lower {
+                                order: 1;
+                            }
+                        }
+
+                        .transition-reverse {
+                            transform: translateX(180px);
+                        }
+
+                        .transition {
+                            transform: none;
+                            transition: transform 0.85s cubic-bezier(0.3, 1, 0.35, 1);
+                        }
+                    }
+                }
+            }
+            
             .text-container {
                 h1 {
                     color: $accent;

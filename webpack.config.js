@@ -4,7 +4,8 @@ module.exports = {
 	entry: "./src/index.js",
 	output: {
 		filename: "main.js",
-		path: path.resolve(__dirname, "dist"),
+        path: path.resolve(__dirname, "dist"),
+        publicPath: "./dist"
     },
     module: {
         rules: [
@@ -18,7 +19,11 @@ module.exports = {
                     // Compiles Sass to CSS
                     'sass-loader',
                 ]
-            }
+            },
+            {
+                test: /\.(png|jpe?g)$/,
+                loader: 'file-loader?name=/images/[name].[ext]',
+            },
         ],
     },
 };
